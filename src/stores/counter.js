@@ -1,6 +1,7 @@
 // 定义关于counter的store
 import { defineStore } from "pinia";
 
+// 导入useUser
 import useUser from "./user";
 const useCounter = defineStore("counter", {
   state: () => ({
@@ -33,6 +34,7 @@ const useCounter = defineStore("counter", {
 
     // 4. getters中用到别的store中的数据
     showUserMsg(state){
+      // 在这里使用useUser
         // 1. 获取user信息
         const userStore = useUser()
         // 2.获取自己的信息
